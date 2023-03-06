@@ -1,0 +1,291 @@
+/* Global Variables and imports */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap');
+
+:root{
+    --main-color: #10CAB7;
+    --back-color: #FFFFFF;
+    --font-color: #2C4755;
+    --main-font: 'Work Sans', sans-serif;
+}
+/* Global Variables and imports */
+
+/* Main Rules */
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    
+}
+body{
+    background-color: var(--back-color);
+    font-family: var(--main-font);
+    
+}
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 80%;
+}
+/* Main Rules */
+
+/* Special styles starts here */
+.section-name{
+    font-size: 100px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: -3px;
+    color: #ebeced;
+    margin: 0;
+}
+@media (max-width: 767px) {
+    .section-name{
+        font-size: 60px;
+    }
+    /* BIG NOTE PLEASE WRITE IT DOWN */
+}
+.section-name + p{
+    text-align: center;
+    margin: -30px 0 0;
+    color: #797979;
+    font-size: 20px;
+}
+
+/* Special styles ends here */
+
+/* Template Starts here */
+/* Header Starts here*/
+header{
+    padding: 20px;
+}
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo{
+    width: 60px;
+}
+header nav{
+    position: relative;
+}
+header nav .icon{
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+}
+header nav .icon span{
+    background-color: black;
+    height: 3px;
+    margin-bottom: 5px;
+}
+header nav .icon span:first-child{
+    width: 100%;
+}
+header nav:hover .icon span:nth-child(2){
+    width: 100%;
+}
+header nav .icon span:nth-child(2){
+    width: 60%;
+    transition: 0.2s;
+}
+header nav .icon span:last-child{
+    width: 100%;
+}
+header nav ul{
+    list-style: none;
+    position: absolute;
+    right: 0;
+    background-color: #d2d2d2;
+    padding: 0;
+    margin: 0;
+    top: calc(100% + 20px);
+    width: 200px;
+    display: none;
+    z-index: 1;
+}
+header nav ul::before{
+    content: "";
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #d2d2d2 transparent;
+    position: absolute;
+    right: 5px;
+    top: -19px;
+}
+header nav:hover ul{
+    display: block;
+}
+header nav ul li{
+    padding: 5px;
+}
+header nav ul li:not(:last-child){
+    border-bottom: 1px solid;
+}
+header nav ul li a{
+    text-decoration: none;
+    color: var(--font-color);
+    transition: 0.3s;
+    padding: 10px;
+    display: block;
+}
+header nav ul li a:hover{
+    padding-left: 20px;
+}
+/* Header Ends here*/
+
+/* Hero Section starts here */
+.hero{
+    background-image: url(../img/shubham-dhage-4tXfdctTcWs-unsplash.jpg);
+    background-size: cover;
+    /* width: 100%; */
+    height: calc(100vh - 64px);
+    /* margin: 0;
+    padding: 0; */
+    position: relative;
+    /* outline: 0; */
+}
+.hero .hero-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    max-width: 100%;
+    text-align: center;
+}
+.hero .hero-text h1{
+    margin: 0;
+    font-family: var(--main-font);
+    font-weight: 800;
+    font-size: 50px;
+    color: var(--main-color);
+}
+.hero .hero-text p{
+    font-size: 20px;
+    color: white;
+}
+/* Hero Section ends here */
+
+/* Features Section starts here */
+.features{
+    padding-top: 20px;
+    margin-top: 5px;
+    
+}
+.features .feat-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    justify-content: space-evenly;
+    grid-gap: 90px;
+    text-align: center;
+}
+.features .feat-container .feature{
+    padding: 20px;
+    transition: 0.3s;
+}
+.features .feat-container .feature:hover{
+    box-shadow: 10px 10px 8px rgba(0,0,0,0.5); 
+    /* horizontal vertical blur spread color */
+}
+.features .feat-container .feature i{
+    font-size: 35px;
+    color: var(--main-color);
+    margin-bottom: 10px;
+}
+.features .feat-container .feature h3{
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+.features .feat-container .feature p{
+    line-height: 1.8;
+}
+/* Features Section ends here */
+
+/* Services Section starts here */
+.services{
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.services .serv-container{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* justify-content: space-between; */
+    gap: 20px;
+}
+.services .serv-container .col .serv{
+    display: flex;
+    margin-bottom: 40px;
+}
+@media (max-width: 767px) {
+    .services .serv-container .col .serv{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    /* BIG NOTE PLEASE WRITE IT DOWN */
+}
+.services .serv i{
+    flex-basis: 60px;
+    font-size: 25px;
+    color: var(--main-color);
+    /* BIG NOTE PLEASE WRITE IT DOWN */
+}
+.services .serv .serv-details{
+    flex: 1;
+}
+.services .serv .serv-details h3{
+    margin: 0 0 20px;
+    /* BIG NOTE PLEASE WRITE IT DOWN */
+}
+.services .serv-container .col:last-child .img-container img{
+    max-width: 100%;
+}
+.services .img-container{
+    text-align: center;
+    position: relative;
+}
+@media (max-width: 280px) {
+    .services .img-container img{
+        max-width: 50%;
+    }
+}
+.services .img-container::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    background-color: var(--font-color);
+    top: -50px;
+    height: calc(100% + 100px);
+    right: -40px;
+    z-index: -1;
+}
+/* Services Section ends here */
+
+/* Portfolio Section starts here */
+.portfolio{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.portfolio .container .section-heading{
+    margin-bottom: 40px;
+}
+.portfolio .projects{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* justify-content: space-between; */
+    gap: 20px;
+}
+.portfolio .projects .project .img-pro{
+    max-width: 100%;
+}
+.porfolio .project{
+    background-color: white;
+}
+/* Portfolio Section ends here */
+
+/* Template Ends here */
